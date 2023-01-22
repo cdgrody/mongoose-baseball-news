@@ -14,6 +14,8 @@
         <div class="hyperlinks">
           <a href="/" class="title">Home</a>
           <% if (user) { %>
+          <a href="/">Post Story</a>
+          <a href="/">Archives</a>
           <a href="/logout">Log Out</a>
           <% } else { %>
           <a href="/auth/google" class="login"
@@ -22,6 +24,3 @@
           <% } %>
         </div>
       </div>
-    </div>
-  </body>
-</html>
