@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 const articleSchema = new Schema({
     headline: {
         type: String,
-        require: true
+        required: true
     }, 
     articleDate: {
         type: Date,
@@ -17,7 +17,7 @@ const articleSchema = new Schema({
     author: userIdSchema,
     articleText: {
         type: String,
-        require: true
+        required: true
     },
     comments: [commentSchema]
 }, {
@@ -27,7 +27,7 @@ const articleSchema = new Schema({
 const commentSchema = new Schema({
     contentText: {
         type: String,
-        require: true
+        required: true
     },
     author: userIdSchema
 }, {

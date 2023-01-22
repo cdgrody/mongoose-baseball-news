@@ -35,7 +35,7 @@ a:link { text-decoration: none; }
   grid-row: 1 / 2;
   grid-column: 1 / 2;
   color: rgb(190, 0, 0);
-  font-size: 45px;
+  text-align: center;
   padding: 10px;
 }
 
@@ -61,4 +61,15 @@ a:link { text-decoration: none; }
   color: white;
   grid-row: 3 / 4;
   grid-column: 1 / 4;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 34px;
+}
+
+.login img {
+  height: 30px;
 }

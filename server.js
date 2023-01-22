@@ -3,11 +3,13 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-const session = require('express-session')
+const session = require('express-session');
+const passport = require('passport');
 
 require('dotenv').config();
 
 require('./config/database')
+require('./config/passport')
 
 var indexRouter = require('./routes/index');
 var articlesRouter = require('./routes/articles');
@@ -28,6 +30,13 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }))
+
+app.use(passport.initialize())
+app.use(passport.session())
+app.use(function (req, res, next) {
+  res.locals.user = req.user;
+  next();
+});
 
 app.use(express.static(path.join(__dirname, 'public')));
 
