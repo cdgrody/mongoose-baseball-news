@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-
 const Schema = mongoose.Schema;
 
 const articleSchema = new Schema({
@@ -14,7 +13,11 @@ const articleSchema = new Schema({
             return newDate
         }
     },
-    author: userIdSchema,
+    author: {
+        type: userIdSchema,
+        ref: 'User',
+        required: true
+    },
     articleText: {
         type: String,
         required: true
@@ -29,7 +32,11 @@ const commentSchema = new Schema({
         type: String,
         required: true
     },
-    author: userIdSchema
+    author: {
+        type: userIdSchema,
+        ref: 'User',
+        required: true
+    },
 }, {
     timestamps: true
 })
