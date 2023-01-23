@@ -1,0 +1,10 @@
+<%- include('../partials/header') %>
+
+<div class="show-article-id">
+    
+    <h1><%= article.headline %></h1>
+    <h3><%= article.articleDate.toLocaleDateString() %> <%= article.articleDate.toLocaleTimeString() %></h3><br>
+    <article><%= article.articleText %></article>
+</div>
+
+<%- include('../partials/footer') %>

@@ -94,3 +94,14 @@ a:link { text-decoration: none; }
   grid-row: 2 / 3;
   grid-column: 2 / 3;
 }
+
+.show-article-id {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: rgba(255, 255, 255, 0.5);
+  font-size: 20px;
+  font-weight: bold;
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+}
