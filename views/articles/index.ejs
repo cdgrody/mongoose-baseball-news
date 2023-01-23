@@ -4,11 +4,12 @@
     
     <% articles.forEach(a => { %>
         <tr>
-    
-            <td class="article-headline"></a><%= a.headline %></td>
-            <td class="article-timestamp"><%= a.articleDate.toLocaleDateString() %> <%= a.articleDate.toLocaleTimeString() %></td><br>
+            <td class="article-headline"><%= a.headline %></td>
+            <td class="article-timestamp"><%= a.articleDate.toLocaleDateString() %> <%= a.articleDate.toLocaleTimeString() %></td>
             <button><a href="/articles/<%= a._id %>">Article Details</a></button>
-        </a>
+            <form action="/articles/<%= a._id %>?_method=DELETE" class="delete-form" method="POST">
+                <button type="submit">Delete Article</button>
+            </form>
         </tr>
 
     <% }) %>
