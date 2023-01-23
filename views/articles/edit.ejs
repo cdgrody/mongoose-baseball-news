@@ -1,0 +1,21 @@
+<%- include('../partials/header')%>
+
+<div class="edit-article">
+    <form action="/articles/<%= article._id %>?_method=PUT" class="edit-form" method="POST" autocomplete="off">
+    <label
+      >Headline:
+      <textarea rows=1 cols=82 name="headline" autocapitalize="on"><%= article.headline %></textarea>
+    </label><br>
+    <label
+      >Date:
+      <input type="datetime-local" name="articleDate" />
+    </label><br>
+    <label
+      >Article Text:<br>
+      <textarea rows=45 cols=90 name="articleText"><%= article.articleText %></textarea>
+    </label><br>
+    <button type="submit" class="submit-updated-article">Submit Article</button>
+</form>
+</div>
+
+<%- include('../partials/footer')%>

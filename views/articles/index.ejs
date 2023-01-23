@@ -10,9 +10,10 @@
             <form action="/articles/<%= a._id %>?_method=DELETE" class="delete-form" method="POST">
                 <button type="submit-button">Delete Article</button>
             </form>
-            <form action="/articles/<%= a._id %>?_method=PUT" class="edit-form" method="POST">
-                <button type="submit-button">Update Article</button>
-            </form>
+            <a href="/articles/<%= a._id %>/edit">
+                <button type="edit-button">Edit Article</button>
+            </a>
+            
         </tr>
 
     <% }) %>

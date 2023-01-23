@@ -7,6 +7,8 @@ router.get('/new', articlesCtrl.new);
 router.post('/', articlesCtrl.create);
 router.get('/', articlesCtrl.index);
 router.delete('/:id', articlesCtrl.delete);
+router.get('/:id/edit', articlesCtrl.edit);
+router.put("/:id", articlesCtrl.update)
 router.get('/:id', articlesCtrl.show);
 //get /articles/:id/edit
 
