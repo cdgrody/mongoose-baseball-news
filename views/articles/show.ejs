@@ -3,7 +3,8 @@
 <div class="show-article-id">
     
     <h1><%= article.headline %></h1>
-    <h3><%= article.articleDate.toLocaleDateString() %> <%= article.articleDate.toLocaleTimeString() %></h3><br>
+    <h3><%= article.articleDate.toLocaleDateString() %> <%= article.articleDate.toLocaleTimeString() %></h3>
+    <h3>Author: <%= article.author %></h3><br>
     <article><%= article.articleText %></article>
 </div>
 
@@ -14,11 +15,11 @@
         <input type="submit" value="Post Comment">
     </form><br><br>
     <h2>Comments:</h2><br>
-    <!-- <li> -->
+    <% if(article.comments.length) { %>
         <% article.comments.forEach(a => {%>
             <ul> <%= a.contentText %> </ul>
         <% }); %>
-    <!-- </li> -->
+    <% }; %>
 </div>
 
 

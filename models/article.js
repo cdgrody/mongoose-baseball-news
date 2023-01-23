@@ -6,11 +6,13 @@ const commentSchema = new Schema({
         type: String,
         required: true
     },
-    author: {
+    user: {
         type: Schema.Types.ObjectId,
         ref: 'User',
-        // required: true
+        required: true
     },
+    author: String,
+    userAvatar: String,
 }, {
     timestamps: true
 })
@@ -21,18 +23,18 @@ const articleSchema = new Schema({
         required: true
     }, 
     articleDate: {
-        type: Date,
+        type: Date
         // default: function() {
         //     const newDate = new Date();
         //     return newDate
         // }
     },
-    author: {
+    user: {
         type: Schema.Types.ObjectId,
         ref: 'User',
-        // required: true
+        required: true
     },
-    userName: String,
+    author: String,
     userAvatar: String,
     articleText: {
         type: String,
