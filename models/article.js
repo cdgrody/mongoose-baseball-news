@@ -22,15 +22,15 @@ const articleSchema = new Schema({
     }, 
     articleDate: {
         type: Date,
-        default: function() {
-            const newDate = new Date();
-            return newDate
-        }
+        // default: function() {
+        //     const newDate = new Date();
+        //     return newDate
+        // }
     },
     author: {
         type: Schema.Types.ObjectId,
         ref: 'User',
-        required: true
+        // required: true
     },
     userName: String,
     userAvatar: String,

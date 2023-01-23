@@ -21,15 +21,6 @@ a:link { text-decoration: none; }
   background-position: center;
 }
 
-.new-article {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  background: rgba(255, 255, 255, 0.5);
-  grid-row: 2 / 3;
-  grid-column: 2 / 3;
-}
-
 .banner {
   display: grid;
   grid-template-rows: 1fr;
@@ -82,4 +73,24 @@ a:link { text-decoration: none; }
 
 .login img {
   height: 30px;
+}
+
+.new-article {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background: rgba(255, 255, 255, 0.5);
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+}
+
+.show-articles {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background: rgba(255, 255, 255, 0.5);
+  font-size: 20px;
+  font-weight: bold;
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
 }
