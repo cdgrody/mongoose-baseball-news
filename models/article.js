@@ -1,6 +1,20 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+const commentSchema = new Schema({
+    contentText: {
+        type: String,
+        required: true
+    },
+    author: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+    },
+}, {
+    timestamps: true
+})
+
 const articleSchema = new Schema({
     headline: {
         type: String,
@@ -14,29 +28,17 @@ const articleSchema = new Schema({
         }
     },
     author: {
-        type: userIdSchema,
+        type: Schema.Types.ObjectId,
         ref: 'User',
         required: true
     },
+    userName: String,
+    userAvatar: String,
     articleText: {
         type: String,
         required: true
     },
     comments: [commentSchema]
-}, {
-    timestamps: true
-})
-
-const commentSchema = new Schema({
-    contentText: {
-        type: String,
-        required: true
-    },
-    author: {
-        type: userIdSchema,
-        ref: 'User',
-        required: true
-    },
 }, {
     timestamps: true
 })
