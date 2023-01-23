@@ -61,18 +61,13 @@ function edit(req, res) {
 }
 
 function update(req, res) {
-  console.log("update function begun");
   if (!req.body.articleDate) req.body.articleDate = new Date();
-  console.log("req.body below");
-  console.log(req.body);
   Article.findOneAndUpdate(req.params.id, req.body, function (err, article) {
     if (err) {
       console.log("There's an error", err);
       res.redirect("/articles");
     } else {
       article.save(function (err) {
-        console.log("save function begun");
-        console.log(article);
         res.redirect("/articles");
       });
     }

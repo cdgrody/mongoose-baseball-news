@@ -7,4 +7,12 @@
     <article><%= article.articleText %></article>
 </div>
 
+<div class="show-comments">
+    <h2>Join the Conversation</h2><br>
+    <form action="/articles/<%= article._id %>/comments" method="POST">
+        <textarea placeholder="Write a Comment" name="contentText"></textarea>
+        <input type="submit" value="Post Comment">
+    </form>
+</div>
+
 <%- include('../partials/footer') %>
