@@ -8,7 +8,10 @@
             <td class="article-timestamp"><%= a.articleDate.toLocaleDateString() %> <%= a.articleDate.toLocaleTimeString() %></td>
             <button><a href="/articles/<%= a._id %>">Article Details</a></button>
             <form action="/articles/<%= a._id %>?_method=DELETE" class="delete-form" method="POST">
-                <button type="submit">Delete Article</button>
+                <button type="submit-button">Delete Article</button>
+            </form>
+            <form action="/articles/<%= a._id %>?_method=PUT" class="edit-form" method="POST">
+                <button type="submit-button">Update Article</button>
             </form>
         </tr>
 

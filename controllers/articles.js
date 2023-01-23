@@ -5,7 +5,8 @@ module.exports = {
     create,
     index,
     show,
-    delete: deleteArticle
+    delete: deleteArticle,
+    edit
 }
 
 function index(req,res) {
@@ -35,15 +36,26 @@ function create(req,res) {
 }
 
 function deleteArticle(req,res) {
-    console.log(req.params.id)
     Article.findById(req.params.id, function (err, article){
         if (err){
             console.log("There's an error", err)
         } else {
-            console.log("Removing this article below");
-            console.log(article);
             article.remove(req.params.id)
         }
         res.redirect('/articles');
+    });
+}
+
+function edit(req, res) {
+    Article.findById(req.params.id, function (err, article){
+        if (err){
+            console.log("There's an error", err)
+            res.redirect('/articles');
+        } else {
+            console.log(article)
+            res.render(`/articles/${req.params.id}/edit`, {
+                title: "Edit Article",
+            });
+        }
     });
 }

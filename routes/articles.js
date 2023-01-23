@@ -8,7 +8,7 @@ router.post('/', articlesCtrl.create);
 router.get('/', articlesCtrl.index);
 router.delete('/:id', articlesCtrl.delete);
 router.get('/:id', articlesCtrl.show);
-//DELETE /articles/:id
+//get /articles/:id/edit
 
 
 module.exports = router;
