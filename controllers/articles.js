@@ -74,38 +74,7 @@ function edit(req, res) {
 
 function update(req, res) {
   if (!req.body.articleDate) req.body.articleDate = new Date();
-  console.log("update function begun")
   Article.findByIdAndUpdate(req.params.id, req.body, function (err, article) {
-      // console.log("article below")
-      // console.log(article)
-      // console.log("req.body below")
-      // console.log(req.body)
-      // article = req.body;
-      // console.log(article)
-      // article.save(function(err) {
-        res.redirect("/articles");
-      // })
-    // }
+        res.redirect(`/articles/${req.params.id}`);
   });
 }
-
-// function update(req, res) {
-//   if (!req.body.articleDate) req.body.articleDate = new Date();
-//   Article.findById(req.params.id, function (err, article) {
-//     // if (err) {
-//     //   console.log("There's an error", err);
-//     //   res.redirect("/articles");
-//     // } else {
-//       console.log("update function begun")
-//       console.log("article below")
-//       console.log(article)
-//       console.log("req.body below")
-//       console.log(req.body)
-//       article = req.body;
-//       console.log(article)
-//       article.save(function(err) {
-//         res.redirect("/articles");
-//       })
-//     // }
-//   });
-// }

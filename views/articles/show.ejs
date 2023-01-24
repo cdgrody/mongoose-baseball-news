@@ -3,10 +3,9 @@
 <div class="show-article-id">
     
     <h1><%= article.headline %></h1>
-    <h3><%= article.articleDate.toLocaleDateString() %> <%= article.articleDate.toLocaleTimeString() %></h3>
     <h3 class="review-user"> <img alt="avatar" src="<%= article.userAvatar %>" referrerpolicy="no-referrer" > <%= article.author %> </h3><br>
 
-    <article><%= article.articleText %></article>
+    <article><%= article.articleDate.toLocaleDateString() %> <%= article.articleDate.toLocaleTimeString() %>:<br><%= article.articleText %></article>
     <% if (user?._id.equals(article.user)) { %>
 
     <div class="article-buttons-detail-view">
@@ -20,6 +19,9 @@
         <a href="/articles/<%= article._id %>/edit">
           <button type="edit-button">Edit Article</button>
         </a>
+        <a href="/articles/<%= article._id %>/additions/new">
+          <button type="edit-button">Add to Story</button>
+        </a>
       </div>
       <% } %>
 
@@ -30,7 +32,7 @@
     <% if (user) { %>
 
     <form action="/articles/<%= article._id %>/comments" method="POST">
-        <textarea placeholder="Write a Comment" name="contentText"></textarea><br>
+        <textarea rows="3" cols="40" placeholder="Write a Comment" name="contentText"></textarea><br>
         <input type="submit" value="Post Comment">
     </form><br><br>
     <% } else { %>

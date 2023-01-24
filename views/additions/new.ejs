@@ -1,0 +1,11 @@
+<%- include('../partials/header')%>
+
+<div class="new-article">
+  <form action="/articles/<%= article._id %>/additions " method="POST">
+      <input type="datetime-local" name="articleDate" /><br>
+      <textarea rows=45 cols=90 placeholder="Type Additional News Here" name="additionText"></textarea><br>
+    <button type="submit" class="submit-article">Submit Article</button>
+</form>
+</div>
+
+<%- include('../partials/footer')%>
