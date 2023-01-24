@@ -9,15 +9,15 @@
                 <ul class="article-timestamp"><%= a.articleDate.toLocaleDateString() %> <%= a.articleDate.toLocaleTimeString() %></ul>
                 <button><a href="/articles/<%= a._id %>">Article Details</a></button>
             </div>
-            <div class="article-buttons">
                 <% if (user?._id.equals(a.user)) { %>
-                    <form action="/articles/<%= a._id %>?_method=DELETE" class="delete-form" method="POST">
-                        <button type="submit-button">Delete Article</button>
-                    </form>
-                    <a href="/articles/<%= a._id %>/edit">
-                        <button type="edit-button">Edit Article</button>
-                    </a>
-            </div>
+                    <div class="article-buttons">
+                        <form action="/articles/<%= a._id %>?_method=DELETE" class="delete-form" method="POST">
+                            <button type="submit-button">Delete Article</button>
+                        </form>
+                        <a href="/articles/<%= a._id %>/edit">
+                            <button type="edit-button">Edit Article</button>
+                        </a>
+                    </div>
                 <% } %>
         </div>
     <% }) %>

@@ -11,13 +11,13 @@
 <div class="show-comments">
     <h2>Join the Conversation</h2><br>
     <form action="/articles/<%= article._id %>/comments" method="POST">
-        <textarea placeholder="Write a Comment" name="contentText"></textarea>
+        <textarea placeholder="Write a Comment" name="contentText"></textarea><br>
         <input type="submit" value="Post Comment">
     </form><br><br>
     <h2>Comments:</h2><br>
     <% if(article.comments.length) { %>
         <% article.comments.forEach(a => {%>
-            <ul class="review-user"> <img alt="avatar" src="<%= a.userAvatar %>" referrerpolicy="no-referrer" >< <%= a.author %> </ul>
+            <ul class="review-user"> <img alt="avatar" src="<%= a.userAvatar %>" referrerpolicy="no-referrer" > <%= a.author %> </ul>
             <ul> <%= a.contentText %> </ul><br>
         <% }); %>
     <% }; %>
