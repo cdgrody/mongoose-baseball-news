@@ -6,15 +6,16 @@
         <tr>
             <td class="article-headline"><%= a.headline %></td>
             <td class="article-timestamp"><%= a.articleDate.toLocaleDateString() %> <%= a.articleDate.toLocaleTimeString() %></td>
-            
+
             <button><a href="/articles/<%= a._id %>">Article Details</a></button>
-            <form action="/articles/<%= a._id %>?_method=DELETE" class="delete-form" method="POST">
-                <button type="submit-button">Delete Article</button>
-            </form>
-            <a href="/articles/<%= a._id %>/edit">
-                <button type="edit-button">Edit Article</button>
-            </a>
-            
+            <% if (user?._id.equals(a.user)) { %>
+                <form action="/articles/<%= a._id %>?_method=DELETE" class="delete-form" method="POST">
+                    <button type="submit-button">Delete Article</button>
+                </form>
+                <a href="/articles/<%= a._id %>/edit">
+                    <button type="edit-button">Edit Article</button>
+                </a>
+            <% } %>
         </tr>
 
     <% }) %>
