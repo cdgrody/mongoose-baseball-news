@@ -11,7 +11,9 @@ module.exports = {
 };
 
 function index(req, res) {
-  Article.find({}, function (err, articles) {
+  Article.find({}) 
+    .sort({articleDate: -1})
+    .exec(function (err, articles) {
     res.render("articles/index", { title: "All Articles", articles });
   });
 }
