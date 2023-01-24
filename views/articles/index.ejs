@@ -1,26 +1,41 @@
-<%- include('../partials/header') %>
+<%- include('../partials/header') %> 
 
 <div class="show-articles">
-    
-    <% articles.forEach(a => { %>
-        <div class="article-box">
-            <div class="article-info">
-                <ul class="article-headline"><%= a.headline %></ul>
-                <ul class="article-timestamp"><%= a.articleDate.toLocaleDateString() %> <%= a.articleDate.toLocaleTimeString() %></ul>
-                <button><a href="/articles/<%= a._id %>">Article Details</a></button>
-            </div>
-                <% if (user?._id.equals(a.user)) { %>
-                    <div class="article-buttons">
-                        <form action="/articles/<%= a._id %>?_method=DELETE" class="delete-form" method="POST">
-                            <button type="submit-button">Delete Article</button>
-                        </form>
-                        <a href="/articles/<%= a._id %>/edit">
-                            <button type="edit-button">Edit Article</button>
-                        </a>
-                    </div>
-                <% } %>
-        </div>
-    <% }) %>
-</div>
 
-<%- include('../partials/footer') %>
+<% counter = 0 %>
+
+<% articles.forEach(a => { %>
+    <% if (counter > 6) return %>
+    <% counter += 1 %>
+    
+    <div class="article-box">
+      <div class="article-info">
+        <ul class="article-headline">
+          <%= a.headline %>
+        </ul>
+        <ul class="article-timestamp">
+          <%= a.articleDate.toLocaleDateString() %> <%=
+          a.articleDate.toLocaleTimeString() %>
+        </ul>
+        <button><a href="/articles/<%= a._id %>">Article Details</a></button>
+      </div>
+      <% if (user?._id.equals(a.user)) { %>
+      <div class="article-buttons">
+        <form
+          action="/articles/<%= a._id %>?_method=DELETE"
+          class="delete-form"
+          method="POST"
+        >
+          <button type="submit-button">Delete Article</button>
+        </form>
+        <a href="/articles/<%= a._id %>/edit">
+          <button type="edit-button">Edit Article</button>
+        </a>
+      </div>
+      <% } %>
+    </div>
+    <% }) %>
+  </div>
+
+  <%- include('../partials/footer') %>
+</div>

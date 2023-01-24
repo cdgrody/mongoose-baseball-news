@@ -107,7 +107,7 @@ a:visited { text-decoration: none; color: black}
 .show-articles {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-evenly;
   font-size: 20px;
   font-weight: bold;
   grid-row: 2 / 3;

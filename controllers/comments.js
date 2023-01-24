@@ -11,7 +11,7 @@ function create(req,res) {
         req.body.userAvatar = req.user.avatar;
         req.body.author = req.user.name;
       
-        article.comments.push(req.body);
+        article.comments.splice(0, 0, req.body);
         article.save(function(err) {
             res.redirect(`/articles/${req.params.id}`)
         });
