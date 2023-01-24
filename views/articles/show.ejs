@@ -17,7 +17,8 @@
     <h2>Comments:</h2><br>
     <% if(article.comments.length) { %>
         <% article.comments.forEach(a => {%>
-            <ul> <%= a.contentText %> </ul>
+            <ul class="review-user"> <img alt="avatar" src="<%= a.userAvatar %>" referrerpolicy="no-referrer" >< <%= a.author %> </ul>
+            <ul> <%= a.contentText %> </ul><br>
         <% }); %>
     <% }; %>
 </div>

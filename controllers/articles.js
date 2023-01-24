@@ -27,12 +27,11 @@ function newArticle(req, res) {
 }
 
 function create(req, res) {
-  console.log("create function entered");
+
   if (!req.body.articleDate) req.body.articleDate = new Date();
 
   req.body.user = req.user._id;
   req.body.author = req.user.name;
-  console.log("author", req.body.author);
 
   const article = new Article(req.body);
   article.save(function (err) {

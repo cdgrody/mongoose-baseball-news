@@ -5,14 +5,17 @@ module.exports = {
 };
 
 function create(req,res) {
-    console.log("create function")
     article.findById(req.params.id, function(err, article){
-        console.log(req.body)
-        // console.log(article.comments)
+
+        req.body.user = req.user._id;
+        console.log("Avatar!!!")
+        console.log(req.user.avatar)
+        console.log(typeof(req.user.avatar))
+        req.body.userAvatar = req.user.avatar;
+        req.body.author = req.user.name;
+      
         article.comments.push(req.body);
-        // console.log(article.comments)
         article.save(function(err) {
-            console.log(article.comments[0]);
             res.redirect(`/articles/${req.params.id}`)
         });
     })
