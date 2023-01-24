@@ -3,21 +3,23 @@
 <div class="show-articles">
     
     <% articles.forEach(a => { %>
-        <tr>
-            <td class="article-headline"><%= a.headline %></td>
-            <td class="article-timestamp"><%= a.articleDate.toLocaleDateString() %> <%= a.articleDate.toLocaleTimeString() %></td>
-
-            <button><a href="/articles/<%= a._id %>">Article Details</a></button>
-            <% if (user?._id.equals(a.user)) { %>
-                <form action="/articles/<%= a._id %>?_method=DELETE" class="delete-form" method="POST">
-                    <button type="submit-button">Delete Article</button>
-                </form>
-                <a href="/articles/<%= a._id %>/edit">
-                    <button type="edit-button">Edit Article</button>
-                </a>
-            <% } %>
-        </tr>
-
+        <div class="article-box">
+            <div class="article-info">
+                <ul class="article-headline"><%= a.headline %></ul>
+                <ul class="article-timestamp"><%= a.articleDate.toLocaleDateString() %> <%= a.articleDate.toLocaleTimeString() %></ul>
+                <button><a href="/articles/<%= a._id %>">Article Details</a></button>
+            </div>
+            <div class="article-buttons">
+                <% if (user?._id.equals(a.user)) { %>
+                    <form action="/articles/<%= a._id %>?_method=DELETE" class="delete-form" method="POST">
+                        <button type="submit-button">Delete Article</button>
+                    </form>
+                    <a href="/articles/<%= a._id %>/edit">
+                        <button type="edit-button">Edit Article</button>
+                    </a>
+            </div>
+                <% } %>
+        </div>
     <% }) %>
 </div>
 
