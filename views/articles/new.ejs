@@ -2,18 +2,9 @@
 
 <div class="new-article">
   <form action="/articles" method="POST">
-    <label
-      >Headline:
-      <textarea rows=1 cols=82 name="headline" placeholder="Type Headline Here" autocapitalize="on" maxlength="60"></textarea>
-    </label><br>
-    <label
-      >Date:
-      <input type="datetime-local" name="articleDate" />
-    </label><br>
-    <label
-      >Article Text:<br>
-      <textarea rows=45 cols=90 placeholder="Type Article Here" name="articleText"></textarea>
-    </label><br>
+      <textarea rows=1 cols=90 name="headline" placeholder="Type Headline Here" autocapitalize="on" maxlength="60"></textarea><br>
+      <input type="datetime-local" name="articleDate" /><br>
+      <textarea rows=45 cols=90 placeholder="Type Article Here" name="articleText"></textarea><br>
     <button type="submit" class="submit-article">Submit Article</button>
 </form>
 </div>

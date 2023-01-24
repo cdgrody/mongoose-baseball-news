@@ -80,9 +80,28 @@ a:visited { text-decoration: none; color: black}
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  align-items: center;
   background: rgba(255, 255, 255, 0.5);
   grid-row: 2 / 3;
   grid-column: 2 / 3;
+}
+
+.edit-article {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.5);
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+}
+
+.submit-article {
+  cursor: pointer;
+  padding: 5px;
+  font-size: 20px;
+  border-radius: 50%;
+  align-self: center;
 }
 
 .show-articles {
@@ -146,4 +165,15 @@ button {
 
 .article-timestamp {
   font-size: 10px;
+}
+
+.comment-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5px 5px 0px 5px;
+  margin: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 5px;
+  text-align: left;
 }

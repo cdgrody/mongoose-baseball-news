@@ -32,6 +32,7 @@ function create(req, res) {
 
   req.body.user = req.user._id;
   req.body.author = req.user.name;
+  req.body.userAvatar = req.user.avatar;
 
   const article = new Article(req.body);
   article.save(function (err) {

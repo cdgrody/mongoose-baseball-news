@@ -8,9 +8,6 @@ function create(req,res) {
     article.findById(req.params.id, function(err, article){
 
         req.body.user = req.user._id;
-        console.log("Avatar!!!")
-        console.log(req.user.avatar)
-        console.log(typeof(req.user.avatar))
         req.body.userAvatar = req.user.avatar;
         req.body.author = req.user.name;
       

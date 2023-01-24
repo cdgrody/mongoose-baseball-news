@@ -4,7 +4,8 @@
     
     <h1><%= article.headline %></h1>
     <h3><%= article.articleDate.toLocaleDateString() %> <%= article.articleDate.toLocaleTimeString() %></h3>
-    <h3>Author: <%= article.author %></h3><br>
+    <h3 class="review-user"> <img alt="avatar" src="<%= article.userAvatar %>" referrerpolicy="no-referrer" > <%= article.author %> </h3><br>
+
     <article><%= article.articleText %></article>
 </div>
 
@@ -17,8 +18,10 @@
     <h2>Comments:</h2><br>
     <% if(article.comments.length) { %>
         <% article.comments.forEach(a => {%>
-            <ul class="review-user"> <img alt="avatar" src="<%= a.userAvatar %>" referrerpolicy="no-referrer" > <%= a.author %> </ul>
-            <ul> <%= a.contentText %> </ul><br>
+            <div class="comment-box">
+                <ul class="review-user"> <img alt="avatar" src="<%= a.userAvatar %>" referrerpolicy="no-referrer" > <%= a.author %> </ul>
+                <ul> <%= a.contentText %> </ul><br>
+            </div>
         <% }); %>
     <% }; %>
 </div>
