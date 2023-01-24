@@ -79,9 +79,9 @@ function update(req, res) {
       console.log("There's an error", err);
       res.redirect("/articles");
     } else {
-      article.save(function (err) {
+      // article.save(function (err) {
         res.redirect("/articles");
-      });
+      // });
     }
   });
 }
