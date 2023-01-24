@@ -4,10 +4,13 @@
     
     <h1><%= article.headline %></h1>
     <h3 class="review-user"> <img alt="avatar" src="<%= article.userAvatar %>" referrerpolicy="no-referrer" > <%= article.author %> </h3><br>
-
+    <% addition.forEach(a => { %>
+       <ul> <%= a.additionDate.toLocaleDateString() %> <%= a.additionDate.toLocaleTimeString() %>:</ul>
+        <ul><%= a.additionText %></ul><br>
+    <% }) %>
     <article><%= article.articleDate.toLocaleDateString() %> <%= article.articleDate.toLocaleTimeString() %>:<br><%= article.articleText %></article>
-    <% if (user?._id.equals(article.user)) { %>
 
+    <% if (user?._id.equals(article.user)) { %>
     <div class="article-buttons-detail-view">
         <form
           action="/articles/<%= article._id %>?_method=DELETE"

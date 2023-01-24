@@ -1,4 +1,5 @@
 const Article = require("../models/article");
+const Addition = require("../models/addition");
 
 module.exports = {
   new: newArticle,
@@ -20,7 +21,11 @@ function index(req, res) {
 
 function show(req, res) {
   Article.findById(req.params.id).exec(function (err, article) {
-    res.render("articles/show", { title: "Article Detail", article });
+    Addition.find({article: article._id}, function(err, addition) {
+      console.log("see addition below")
+      console.log(addition)
+      res.render("articles/show", { title: "Article Detail", article, addition });
+    })
   });
 }
 

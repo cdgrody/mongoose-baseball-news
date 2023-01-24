@@ -20,6 +20,7 @@ function create(req, res) {
   req.body.user = req.user._id;
   req.body.author = req.user.name;
   req.body.userAvatar = req.user.avatar;
+  req.body.article = req.params.id;
 
   const addition = new Addition(req.body);
   addition.save(function (err) {
