@@ -5,8 +5,8 @@
     <h1><%= article.headline %></h1>
     <h3 class="review-user"> <img alt="avatar" src="<%= article.userAvatar %>" referrerpolicy="no-referrer" > <%= article.author %> </h3><br>
     <% addition.forEach(a => { %>
-       <ul> <%= a.additionDate.toLocaleDateString() %> <%= a.additionDate.toLocaleTimeString() %>:</ul>
-        <ul><%= a.additionText %></ul><br>
+        <ul><%= a.additionDate.toLocaleDateString() %> <%= a.additionDate.toLocaleTimeString() %>:</ul>
+        <ul>Per <%= a.author %>, <%= a.additionText %></ul><br>
     <% }) %>
     <article><%= article.articleDate.toLocaleDateString() %> <%= article.articleDate.toLocaleTimeString() %>:<br><%= article.articleText %></article>
 
