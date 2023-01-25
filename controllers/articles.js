@@ -55,6 +55,7 @@ function create(req, res) {
 
 function deleteArticle(req, res) {
   Article.findById(req.params.id, function (err, article) {
+  if(!article.user.equals(req.user._id)) res.redirect(`/articles/${req.params.id}`);
     if (err) {
       console.log("There's an error", err);
     } else {
@@ -66,6 +67,7 @@ function deleteArticle(req, res) {
 
 function edit(req, res) {
   Article.findById(req.params.id, function (err, article) {
+  if(!article.user.equals(req.user._id)) res.redirect(`/articles/${req.params.id}`);
     if (err) {
       console.log("There's an error", err);
       res.redirect("/articles");
