@@ -19,12 +19,9 @@
     <a href="/articles/<%= article._id %>/edit">
       <button type="edit-button" class="show-button">Edit Article</button>
     </a>
-    <form
-      action="/articles/<%= article._id %>?_method=DELETE"
-      class="delete-form"
-      method="POST"
-    >
+    <form action="/articles/<%= article._id %>?_method=DELETE" class="delete-form" method="POST">
       <button type="submit-button" class="show-button">Delete Article</button>
+    </form>
       </div>
       <% } %>
 
@@ -36,7 +33,8 @@
 
     <form action="/articles/<%= article._id %>/comments" method="POST">
         <textarea rows="3" cols="40" placeholder="Write a Comment" name="contentText"></textarea><br>
-        <input type="submit" value="Post Comment">
+        <input type="submit" value="Post Your Comment Here">
+        <!-- <input type="submit" value="Post Comment"> -->
     </form><br><br>
     <% } else { %>
         <a href="/auth/google" class="login"
