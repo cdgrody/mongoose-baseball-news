@@ -12,11 +12,11 @@
       <div class="banner">
         <a href="/articles" class="title">⚾️ Baseball News: <%= title %> </a>
         <div class="hyperlinks">
-          <a href="/articles" class="title">Home</a>
-          <a href="/archives">Archives</a>
+          <a href="/articles" class="banner-link">Home</a>
+          <a href="/archives" class="banner-link">Archives</a>
           <% if (user) { %>
-          <a href="/articles/new">Post Story</a>
-          <a href="/logout">Log Out</a>
+          <a href="/articles/new" class="banner-link">Post Story</a>
+          <a href="/logout" class="banner-link">Log Out</a>
           <% } else { %>
           <a href="/auth/google" class="login"
             >Log In&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"

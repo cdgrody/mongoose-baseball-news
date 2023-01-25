@@ -10,6 +10,10 @@ body, html {
 a:link { text-decoration: none; color: black}
 a:visited { text-decoration: none; color: black}
 
+button {
+  cursor: pointer;
+}
+
 .ctr {
   display: grid;
   grid-template-rows: 1fr 14fr 1fr;
@@ -72,6 +76,10 @@ a:visited { text-decoration: none; color: black}
   height: 34px;
 }
 
+.login:hover {
+  color: red;
+}
+
 .login img {
   height: 30px;
 }
@@ -114,6 +122,16 @@ a:visited { text-decoration: none; color: black}
   grid-column: 2 / 3;
 }
 
+.article-headline:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.banner-link:hover {
+  color: red;
+  cursor: pointer;
+}
+
 .show-archive-articles {
   display: flex;
   flex-direction: column;
@@ -140,6 +158,15 @@ a:visited { text-decoration: none; color: black}
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+}
+
+.return-to-main-page {
+  font-size: 12px;
+}
+
+.return-to-main-page:hover {
+  text-decoration: underline;
+  color: blue;
 }
 
 .show-button {

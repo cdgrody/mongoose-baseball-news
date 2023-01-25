@@ -7,16 +7,13 @@
     <div class="article-box">
       <div class="article-info">
         <ul class="article-headline">
-          <%= a.headline %>
+            <a href="/articles/<%= a._id %>"><%= a.headline %></a>
         </ul>
         <ul class="article-timestamp">
           <%= a.articleDate.toLocaleDateString() %> <%=
           a.articleDate.toLocaleTimeString() %>
         </ul>
     </div>
-        <div class="article-buttons">
-          <button><a href="/articles/<%= a._id %>">Article Details</a></button>
-      </div>
     </div>
     <% }) %>
   </div>

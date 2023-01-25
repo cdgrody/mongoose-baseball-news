@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
 
 <div class="show-article-id">
-    
+  <a href="/articles" class="return-to-main-page">Return to Main Page</a>
     <h1><%= article.headline %></h1>
     <h3 class="review-user"> <img alt="avatar" src="<%= article.userAvatar %>" referrerpolicy="no-referrer" > <%= article.author %> </h3><br>
     <% addition.forEach(a => { %>

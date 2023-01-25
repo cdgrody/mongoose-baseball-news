@@ -5,19 +5,18 @@
 <% counter = 0 %>
 
 <% articles.forEach(a => { %>
-    <% if (counter > 6) return %>
+    <% if (counter > 7) return %>
     <% counter += 1 %>
     
     <div class="article-box">
       <div class="article-info">
         <ul class="article-headline">
-          <%= a.headline %>
+            <a href="/articles/<%= a._id %>"><%= a.headline %></a>
         </ul>
         <ul class="article-timestamp">
           <%= a.articleDate.toLocaleDateString() %> <%=
           a.articleDate.toLocaleTimeString() %>
         </ul>
-        <button><a href="/articles/<%= a._id %>">Article Details</a></button>
       </div>
       <% if (user?._id.equals(a.user)) { %>
       <div class="article-buttons">
@@ -26,10 +25,10 @@
           class="delete-form"
           method="POST"
         >
-          <button type="submit-button">Delete Article</button>
+          <button type="submit-button" alt="Delete Article">🗑</button>
         </form>
         <a href="/articles/<%= a._id %>/edit">
-          <button type="edit-button">Edit Article</button>
+          <button type="edit-button">✏️</button>
         </a>
       </div>
       <% } %>
