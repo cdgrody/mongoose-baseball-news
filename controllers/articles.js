@@ -21,11 +21,12 @@ function index(req, res) {
 
 function show(req, res) {
   Article.findById(req.params.id).exec(function (err, article) {
-    Addition.find({article: article._id}, function(err, addition) {
-      console.log("see addition below")
-      console.log(addition)
-      res.render("articles/show", { title: "Article Detail", article, addition });
-    })
+    Addition.find({article: article._id})
+      .sort({additionDate: -1})
+      .exec(function(err, addition) {
+        console.log("see addition below")
+        res.render("articles/show", { title: "Article Detail", article, addition });
+      })
   });
 }
 
