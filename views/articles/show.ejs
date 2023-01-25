@@ -12,19 +12,19 @@
 
     <% if (user?._id.equals(article.user)) { %>
     <div class="article-buttons-detail-view">
-        <form
-          action="/articles/<%= article._id %>?_method=DELETE"
-          class="delete-form"
-          method="POST"
-        >
-          <button type="submit-button">Delete Article</button>
-        </form>
-        <a href="/articles/<%= article._id %>/edit">
-          <button type="edit-button">Edit Article</button>
-        </a>
-        <a href="/articles/<%= article._id %>/additions/new">
-          <button type="edit-button">Add to Story</button>
-        </a>
+      <a href="/articles/<%= article._id %>/additions/new">
+        <button type="edit-button" class="show-button">Add to Story</button>
+      </a>
+    </form>
+    <a href="/articles/<%= article._id %>/edit">
+      <button type="edit-button" class="show-button">Edit Article</button>
+    </a>
+    <form
+      action="/articles/<%= article._id %>?_method=DELETE"
+      class="delete-form"
+      method="POST"
+    >
+      <button type="submit-button" class="show-button">Delete Article</button>
       </div>
       <% } %>
 

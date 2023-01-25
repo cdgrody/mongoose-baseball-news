@@ -1,0 +1,25 @@
+<%- include('../partials/header') %> 
+
+<div class="show-archive-articles">
+
+<% articles.forEach(a => { %>
+    
+    <div class="article-box">
+      <div class="article-info">
+        <ul class="article-headline">
+          <%= a.headline %>
+        </ul>
+        <ul class="article-timestamp">
+          <%= a.articleDate.toLocaleDateString() %> <%=
+          a.articleDate.toLocaleTimeString() %>
+        </ul>
+    </div>
+        <div class="article-buttons">
+          <button><a href="/articles/<%= a._id %>">Article Details</a></button>
+      </div>
+    </div>
+    <% }) %>
+  </div>
+
+  <%- include('../partials/footer') %>
+</div>

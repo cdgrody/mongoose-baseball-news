@@ -114,6 +114,16 @@ a:visited { text-decoration: none; color: black}
   grid-column: 2 / 3;
 }
 
+.show-archive-articles {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-size: 10px;
+  font-weight: bold;
+  grid-row: 2 / 3;
+  grid-column: 1 / 2;
+}
+
 .show-article-id {
   display: flex;
   flex-direction: column;
@@ -124,6 +134,23 @@ a:visited { text-decoration: none; color: black}
   grid-row: 2 / 3;
   grid-column: 2 / 3;
   padding: 10px;
+}
+
+.article-buttons-detail-view {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.show-button {
+  cursor: pointer;
+  background: blue;
+  color: white;
+  width: 300px;
+  height: 50px;
+  margin-top: 10px;
+  font-size: 30px;;
+  border-radius: 10% / 60%;
 }
 
 button {
