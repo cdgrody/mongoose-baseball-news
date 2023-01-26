@@ -54,8 +54,6 @@ function create(req, res) {
 }
 
 function deleteArticle(req, res) {
-  console.log("we're in the delete controller???????")
-  console.log(req)
   Article.findById(req.params.id, function (err, article) {
   if(!article.user.equals(req.user._id)) res.redirect(`/articles/${req.params.id}`);
     if (err) {
