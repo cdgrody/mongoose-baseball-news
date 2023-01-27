@@ -1,13 +1,13 @@
-Baseball News
+# Baseball News
 by Charles Grody
 
-Deployment Link:
+# Deployment Link:
 ...
 
-Technologies Used:
+# Technologies Used:
 Javascript, HTML, CSS, Node.js, Express, MongoDB
 
-Getting Started:
+# Getting Started:
 1) Navigate to the web app through the URL in the Deployment Link
 2) Guests can view the most recent headlines on the main page.  They can chose to read the story by clicking on the headline, which will render the article show page.  They can also view a history of older articles in the archive section.
 3) To create a new article simply sign in with Google OAuth and hit the Post Story link in the navigation banner.
@@ -17,7 +17,7 @@ Getting Started:
 7) When an authenticated user is done with the site, they can logout.
 8) Users can navigate through the web application at any point with the nav bar.
 
-Next Steps:
+# Next Steps:
 1) Consume a 3rd party API with baseball player data.  Link specific players in stories to their statistics pages.
 2) Add full update and delete to comments.
 3) Add full update and delete to story additions.
