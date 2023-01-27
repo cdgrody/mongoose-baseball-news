@@ -106,10 +106,17 @@ button {
 
 .submit-article {
   cursor: pointer;
-  padding: 5px;
+  padding: 0px;
+  width: 150px;
+  height: 25px;
   font-size: 20px;
-  border-radius: 50%;
+  border-radius: 10% / 60%;
   align-self: center;
+}
+
+.submit-article:hover {
+  background: darkgray;
+  color: white;
 }
 
 .show-articles {
@@ -173,11 +180,15 @@ button {
   cursor: pointer;
   background: blue;
   color: white;
-  width: 300px;
+  width: 200px;
   height: 50px;
   margin-top: 10px;
   font-size: 30px;;
-  border-radius: 10% / 60%;
+  border-radius: 10% / 50%;
+}
+
+.show-button:hover {
+  background: darkblue;
 }
 
 button {
