@@ -20,7 +20,7 @@ function index(req, res) {
 }
 
 function show(req, res) {
-  Article.findById(req.params.id).exec(function (err, article) {
+  Article.findById(req.params.id).exec(function (err, article) { /////////////////Favorite controller
     Addition.find({article: article._id})
       .sort({additionDate: -1})
       .exec(function(err, addition) {
