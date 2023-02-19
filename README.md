@@ -2,7 +2,7 @@
 by Charles Grody
 
 # Deployment Link:
-...
+https://baseball-news.herokuapp.com/articles
 
 # Technologies Used:
 Javascript, HTML, CSS, Node.js, Express, MongoDB
